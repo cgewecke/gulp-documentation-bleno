@@ -1,0 +1,33 @@
+{
+  "name": "gulp-documentation",
+  "description": "documentation plugin for gulp",
+  "version": "3.0.0",
+  "author": "Tom MacWright",
+  "dependencies": {
+    "documentation": "4.0.0-beta13",
+    "through2": "^2.0.1",
+    "vinyl": "^2.0.0"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.4.8",
+    "eslint": "^3.9.1",
+    "gulp": "^3.8.11",
+    "tap": "8.0.0"
+  },
+  "keywords": [
+    "documentation",
+    "gulp",
+    "gulpplugin",
+    "jsdoc"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:documentationjs/gulp-documentation.git"
+  },
+  "scripts": {
+    "test": "eslint . && tap test/test.js",
+    "docs": "documentation readme index.js --section=API"
+  }
+}
