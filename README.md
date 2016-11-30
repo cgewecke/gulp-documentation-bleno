@@ -8,7 +8,7 @@ to generate markdown docs for bleno characteristic handlers. (Cloned & modified 
 ## Installation
 
 ```sh
-$ npm install --save-dev https://github.com/cgewecke/gulp-documentation-bleno.git
+$ npm install --save-dev https://github.com/cgewecke/gulp-documentation-bleno
 ```
 
 ## API
