@@ -3,7 +3,9 @@
 
 Use [gulp](http://gulpjs.com/) with
 [documentation-bleno](https://github.com/cgewecke/documentation-bleno)
-to generate markdown docs for bleno characteristic handlers. (Cloned & modified (Nov 2016) from [gulp-documentation](https://github.com/documentationjs/gulp-documentation))
+to generate markdown docs for bleno characteristic handlers. 
+
+(Source: [gulp-documentation](https://github.com/documentationjs/gulp-documentation))
 
 ## Installation
 
@@ -21,7 +23,7 @@ Documentation stream intended for use within the gulp system.
 
 **Parameters**
 
--   `format` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)?** format 'md'
+-   `format` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** format 'md'
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** documentation options - the same as given to [documentation](https://github.com/documentationjs/documentation)
     -   `options.filename` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** custom filename for md or json output
 -   `formatterOptions` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** output options - same as given to documentation
@@ -30,14 +32,14 @@ Documentation stream intended for use within the gulp system.
 **Examples**
 
 ```javascript
-var gulpDocumentation = require('gulp-documentation-bleno'),
+var gulpDocumentation = require('gulp-documentation-bleno');
 var gulp = require('gulp');
-//  Out of the box, you can generate JSON, HTML, and Markdown documentation
+
 gulp.task('bleno-handlers', function () {
-  // Generating characteristic defs documentation
-  return gulp.src('./lib/characteristics.js')
-    .pipe(gulpDocumentation('md'))
-    .pipe(gulp.dest('md-documentation'));
+  // Generating characteristic defs documentation w/ line #s
+  return gulp.src('./sample.js')
+    .pipe(gulpDocumentation('md', { shallow: 'true', github: 'true', filename: 'sample.md' }))
+    .pipe(gulp.dest('./'));
 });
 
 ```
